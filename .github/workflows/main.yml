@@ -23,5 +23,5 @@ jobs:
           GH_REPO: $GH_REPO
           GH_ORG: $GH_ORG
           dev_prefix: 'dev_'
-          dev_prefix: 'prod_'
+          prod_prefix: 'prod_'
           project_id: 'ultimate-bit-359101'
