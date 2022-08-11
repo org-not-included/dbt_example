@@ -8,8 +8,8 @@ jobs:
       GCP_TOKEN: ${{ secrets.GCP_TOKEN }}
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       PR_NUMBER: ${{ github.event.number }}
-      GH_REPO: ${{ github.repository }}
-      GH_ORG: ${{ github.repository_owner }}
+      GH_REPO: ${{ github.event.repository.name }}
+      GH_ORG: ${{ github.event.repository.owner.name }}
     runs-on: ubuntu-latest
     name: Template for Running Row/Column checks against DBT models in Bigquery
     steps:
