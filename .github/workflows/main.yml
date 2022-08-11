@@ -25,3 +25,4 @@ jobs:
           dev_prefix: 'dev_'
           prod_prefix: 'prod_'
           project_id: 'ultimate-bit-359101'
+          DBT_PROFILE_FILE: "profile.yml"
