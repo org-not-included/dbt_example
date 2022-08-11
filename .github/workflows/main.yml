@@ -14,6 +14,14 @@ jobs:
     name: Template for Running Row/Column checks against DBT models in Bigquery
     steps:
       - uses: actions/checkout@v3
+      - name: Print Env Vars
+        run: |
+          echo "Listing out all secrets..."
+          echo "GCP_TOKEN: $GCP_TOKEN"
+          echo "GH_TOKEN: $GH_TOKEN"
+          echo "PR_NUMBER: $PR_NUMBER"
+          echo "GH_REPO: $GH_REPO"
+          echo "GH_ORG: $GH_ORG"
       - id: dummy
         uses: org-not-included/dbt_table_diff@v11
         with:
