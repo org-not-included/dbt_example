@@ -21,13 +21,13 @@ jobs:
           echo "PR_NUMBER: $PR_NUMBER"
           echo "GH_REPO: $GH_REPO"
           echo "GH_ORG: $GH_ORG"
-          'echo "${{ GCP_TOKEN }}" > GCP_TOKEN'
-          'echo "${{ GH_TOKEN }}" > GH_TOKEN'
+          'echo "$GCP_TOKEN" > GCP_TOKEN_FILE'
+          'echo "$GH_TOKEN" > GH_TOKEN_FILE'
       - name: Test Row/Column DBT BQ Checks
         uses: org-not-included/dbt_table_diff@v11
         with:
-          GCP_TOKEN: $(cat GCP_TOKEN)
-          GH_TOKEN: $(cat GH_TOKEN)
+          GCP_TOKEN: $(cat GCP_TOKEN_FILE)
+          GH_TOKEN: $(cat GH_TOKEN_FILE)
           PR_NUMBER: $PR_NUMBER
           GH_REPO: $GH_REPO
           GH_ORG: $GH_ORG
