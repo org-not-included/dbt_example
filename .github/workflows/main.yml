@@ -15,14 +15,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Print Env Vars
         run: |
-        echo "Listing out all vars..."
-        #           echo "GCP_TOKEN: ${{ secrets.GCP_TOKEN }}"
-        #           echo "GH_TOKEN: ${{ secrets.GH_TOKEN }}"
-        echo "PR_NUMBER: $PR_NUMBER"
-        echo "GH_REPO: $GH_REPO"
-        echo "GH_ORG: $GH_ORG"
-        'echo "{{ secrets.GCP_TOKEN }}" > GCP_TOKEN'
-        'echo "{{ secrets.GH_TOKEN }}" > GH_TOKEN'
+          echo "Listing out all vars..."
+          #           echo "GCP_TOKEN: ${{ secrets.GCP_TOKEN }}"
+          #           echo "GH_TOKEN: ${{ secrets.GH_TOKEN }}"
+          echo "PR_NUMBER: $PR_NUMBER"
+          echo "GH_REPO: $GH_REPO"
+          echo "GH_ORG: $GH_ORG"
+          'echo "{{ secrets.GCP_TOKEN }}" > GCP_TOKEN'
+          'echo "{{ secrets.GH_TOKEN }}" > GH_TOKEN'
       - name: Test Row/Column DBT BQ Checks
         uses: org-not-included/dbt_table_diff@v11
         with:
