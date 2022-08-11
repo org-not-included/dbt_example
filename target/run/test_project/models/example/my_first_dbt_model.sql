@@ -1,6 +1,6 @@
 
 
-  create or replace table `ultimate-bit-359101`.`prod_example`.`my_first_dbt_model`
+  create or replace table `ultimate-bit-359101`.`dev_example`.`my_first_dbt_model`
   
   
   OPTIONS()
