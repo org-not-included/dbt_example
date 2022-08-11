@@ -22,7 +22,7 @@ jobs:
           echo "GH_REPO: $GH_REPO"
           echo "GH_ORG: $GH_ORG"
       - name: Test Row/Column DBT BQ Checks
-        uses: org-not-included/dbt_table_diff@v13
+        uses: org-not-included/dbt_table_diff@v14
         with:
           GCP_TOKEN: $GCP_TOKEN
           GH_TOKEN: $GH_TOKEN
