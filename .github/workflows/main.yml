@@ -9,7 +9,7 @@ jobs:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       PR_NUMBER: ${{ github.event.number }}
       GH_REPO: ${{ github.event.repository.name }}
-      GH_ORG: ${{ github.event.repository.owner.name }}
+      GH_ORG: ${{ github.event.pull_request.head.repo.owner.login }}
     runs-on: ubuntu-latest
     name: Template for Running Row/Column checks against DBT models in Bigquery
     steps:
