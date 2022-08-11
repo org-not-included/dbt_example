@@ -23,8 +23,12 @@ jobs:
           echo "GH_ORG: $GH_ORG"
           echo "$GCP_TOKEN" > GCP_TOKEN_FILE
           echo "$GH_TOKEN" > GH_TOKEN_FILE
-          echo "GH_TOKEN_VAR=$(cat GH_TOKEN_FILE)" >> $GITHUB_ENV
-          echo "GCP_TOKEN_VAR=$(cat GCP_TOKEN_FILE)" >> $GITHUB_ENV
+          echo 'GH_TOKEN_VAR<<EOF' >> $GITHUB_ENV
+          cat GH_TOKEN_FILE >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+          echo 'GCP_TOKEN_VAR<<EOF' >> $GITHUB_ENV
+          cat GCP_TOKEN_FILE >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
       - name: Test Row/Column DBT BQ Checks
         uses: org-not-included/dbt_table_diff@v11
         with:
