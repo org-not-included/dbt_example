@@ -6,9 +6,12 @@ source ./.venv/bin/activate > /dev/null
 # Install dbt and other dependencies
 pip install -r local-requirements.txt
 
-## Install dbt community packages
-#dbt deps
-## Compile dbt models
-#dbt compile
-## Show profile path
-#dbt debug --config-dir
+# Install dbt community packages
+dbt deps
+# Compile dbt models
+dbt compile
+# Show profile path
+dbt debug --config-dir
+
+# Ensure Models run properly
+dbt run

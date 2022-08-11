@@ -1,0 +1,27 @@
+name: Run CI/CD
+on:
+  pull_request:
+
+jobs:
+    env:
+      GCP_TOKEN: ${{ secrets.GCP_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      PR_NUMBER: ${{ github.event.number }}
+      GH_REPO: ${{ github.repository }}
+      GH_ORG: ${{ github.repository_owner }}
+  run_dbt_check:
+    runs-on: ubuntu-latest
+    name: Template for Running Row/Column checks against DBT models in Bigquery
+    steps:
+      - uses: actions/checkout@v3
+      - id: dummy
+        uses: org-not-included/dbt_table_diff@v9
+        with:
+          GCP_TOKEN: $GCP_TOKEN
+          GH_TOKEN: $GH_TOKEN
+          PR_NUMBER: $PR_NUMBER
+          GH_REPO: $GH_REPO
+          GH_ORG: $GH_ORG
+          dev_prefix: 'dev_'
+          dev_prefix: 'prod_'
+          project_id: 'ultimate-bit-359101'
