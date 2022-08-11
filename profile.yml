@@ -3,7 +3,7 @@ test_project:
     dev:
       dataset: dev
       fixed_retries: 1
-      keyfile: secrets/gcp_keyfile.json
+      keyfile: secrets/bq_keyfile.json
       location: US
       method: service-account
       priority: interactive
@@ -17,7 +17,7 @@ test_project_2:
     prod:
       dataset: prod
       fixed_retries: 1
-      keyfile: secrets/gcp_keyfile.json
+      keyfile: secrets/bq_keyfile.json
       location: US
       method: service-account
       priority: interactive
