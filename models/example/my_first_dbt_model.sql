@@ -11,9 +11,11 @@
 
 with source_data as (
 
-    select 1 as id
+    select 7 as new_id
     union all
-    select null as id
+    select 13 as new_id
+    union all
+    select 27 as new_id
 
 )
 
